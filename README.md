@@ -75,3 +75,4 @@
 ####  kubectl config use-context minikube
 ####  kubectl describe pods
 ####  kubectl describe pods | grep IP (mostra apenas a linha que contém o endereço IP).
+####  kubectl -it nome_do_pod bash (acessar o terminal do pod)

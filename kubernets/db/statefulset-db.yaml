@@ -3,14 +3,14 @@ kind: StatefulSet
 metadata:
   name: statefulset-mysql
 spec:
-  serviceName: mysql-pod
+  serviceName: db
   selector:
     matchLabels:
-      name: mysql-pod
+      name: statefulset-mysql
   template:
     metadata:
       labels:
-        name: mysql-pod
+        name: statefulset-mysql
     spec:
       containers:
         - name: container-mysql
