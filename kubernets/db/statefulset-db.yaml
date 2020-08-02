@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: statefulset-mysql
+spec:
+  serviceName: mysql-pod
+  selector:
+    matchLabels:
+      name: mysql-pod
+  template:
+    metadata:
+      labels:
+        name: mysql-pod
+    spec:
+      containers:
+        - name: container-mysql
+          image: mysql:5.7.19
+          ports:
+            - containerPort: 3306
+          env:
+            - name: MYSQL_DATABASE
+              value: "loja"
+            - name: MYSQL_USERNAME
+              value: "root"
+            - name: MYSQL_ALLOW_EMPTY_PASSWORD
+              value: "1"
