@@ -47,14 +47,28 @@
 ####  com o nome igual ao do selector do Deployment e ele fica "orquestrando" 
 ####  qual dos pods será acessado. (Provisiona uma url).
 #### 
-## 13 - Anotações comandos minikube
+## 13 - StatefulSet
+####  Objeto parecido com um service, porém com uma vantagem, o service pode 
+####  trabalhar com vários pods e ditar a disponibilidade deles como descrito 
+####  acima, porém ele não trabalha com volumes persistentes, para isso existe 
+####  o StatefulSet, nele é possível ditar o volume, onde será montado e apontar 
+####  com quais permissões ele irá trabalhar, as permissões são configuradas 
+####  em outro yaml
+#### 
+## 14 - Claim
+####  Os clains são arquivos de configurações para definir as permissões dos 
+####  volumes, então quando vamos configurar um StatefulSet, precisamos apontar 
+####  para uma claim, e nessa claim temos a informação se ele tem permissão de 
+####  leitura e escrita dentro deste volume.
+#### 
+## 15 - Anotações comandos minikube
 ####  minikube status (verificar status)
 ####  minikube start (iniciar minikube)
 ####  minikube stop (parar minikube)
 ####  minikube dashboard (painel do minikube)
 ####  minikube service "nome do service" --url (verificar a url do serviço)
 #### 
-## 14 - Anotações comandos kubectl
+## 16 - Anotações comandos kubectl
 ####  kubectl create -f file.yaml
 ####  kubectl get pods
 ####  kubectl delete pods aplicacao
