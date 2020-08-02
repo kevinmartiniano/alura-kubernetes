@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: aplicacao-loja
+spec:
+  containers:
+    - name: container-aplicacao-loja
+      image: kevinmartiniano/aplicacao-loja:latest
+      ports:
+        - containerPort: 80

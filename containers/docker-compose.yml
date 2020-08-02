@@ -1,0 +1,24 @@
+version: '3.0'
+
+networks:
+  alura-sports:
+    external: true
+
+services: 
+  db:
+    image: mysql:5.7.19
+    environment: 
+      - MYSQL_DATABASE=loja
+      - MYSQL_USER=root
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    volumes: 
+      - ./volume_mysql/:/var/lib/mysql/
+    ports:
+      - 3306:3306
+
+  web:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8080:80
